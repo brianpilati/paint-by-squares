@@ -1,0 +1,6 @@
+<div *ngFor="let paintSquareRows of paintSquares">
+  <div *ngFor="let paintSquare of paintSquareRows">
+    <div class="square" [squareData]="paintSquare" appPaintSquareAction></div>
+  </div>
+  <br>
+</div>
