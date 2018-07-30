@@ -1,6 +1,6 @@
 import {Directive, ElementRef, HostListener, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {SquareData} from '../interfaces/square-data';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import {PaintMessageService} from '../paint-message/paint-message.service';
 
 

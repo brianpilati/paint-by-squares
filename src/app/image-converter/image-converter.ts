@@ -39,11 +39,8 @@ export class ImageConverter {
           class: localMap[input]
         });
       });
-      console.log(this.imageData);
       this.imageData.push(rowMap);
     });
-
-    console.log(this.imageData);
   }
 }
 

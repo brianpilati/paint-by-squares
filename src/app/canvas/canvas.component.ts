@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SquareData} from '../interfaces/square-data';
 import {myaImage } from '../image-maps/mya-image';
 import {brianImage} from '../image-maps/brian-image';
 import {fishImage} from '../image-maps/fish-image';
+import {ImageService} from '../image-service/image.service';
 
 @Component({
   selector: 'app-canvas',
@@ -10,13 +11,12 @@ import {fishImage} from '../image-maps/fish-image';
   styleUrls: ['./canvas.component.css']
 })
 export class CanvasComponent implements OnInit {
+  @Input() image: number;
   paintSquares: SquareData[][];
 
-  constructor() { }
+  constructor(private imageService: ImageService ) { }
 
   ngOnInit() {
-    // this.paintSquares = myaImage.getImageData();
-    // this.paintSquares = brianImage.getImageData();
-    this.paintSquares = fishImage.getImageData();
+    this.paintSquares = this.imageService.getImage(this.image).getImageData();
   }
 }
